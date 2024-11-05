@@ -1,0 +1,66 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    background: #ff6347;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 100px auto;
+    width: 300px;
+    cursor: pointer;
+}
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+.message {
+    display: block;
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in;
+}
+.photo {
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 50%;
+}
+.square-photo {
+    width: 400px; /* Adjust to your desired size */
+    height: 400px; /* Makes the image square */
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    border-radius: 0; /* Removes any rounded corners */
+}
+.slide {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+.slide[style*="display: block;"] {
+    opacity: 1;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, #ff6347, transparent);
+    border-radius: 50%;
+    animation: explode 1.5s ease-out forwards;
+}
+@keyframes explode {
+    from { transform: scale(0); opacity: 1; }
+    to { transform: scale(20); opacity: 0; }
+}
